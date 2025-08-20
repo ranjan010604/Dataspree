@@ -1,0 +1,21 @@
+{
+    "name": "data-catalog-dashboard",
+    "version": "1.0.0",
+    "description": "Interactive Data Catalog Dashboard for efficient data discovery and management",
+    "main": "index.html",
+    "scripts": {
+      "start": "live-server --port=3000",
+      "test": "echo \"No tests specified\" && exit 0"
+    },
+    "keywords": [
+      "dashboard",
+      "data-catalog",
+      "data-management",
+      "vanilla-js"
+    ],
+    "author": "Ranjan Kumar",
+    "license": "MIT",
+    "devDependencies": {
+      "live-server": "^1.2.2"
+    }
+  }

@@ -1,0 +1,43 @@
+@media (max-width: 992px) {
+    .data-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .controls {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+    
+    .filters {
+        order: 3;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+    }
+    
+    .filter-select {
+        border-right: none;
+        border-bottom: 1px solid #eee;
+    }
+    
+    .filter-select:last-child {
+        border-bottom: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .dashboard-header {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .performance-metrics {
+        width: 100%;
+        justify-content: space-around;
+    }
+    
+    .pagination {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
