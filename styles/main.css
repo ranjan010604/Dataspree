@@ -9,6 +9,8 @@ body {
     background-color: #f5f7fa;
     color: #333;
     line-height: 1.6;
+    min-height: 100vh;
+    overflow-x: hidden;
 }
 
 .dashboard-container {

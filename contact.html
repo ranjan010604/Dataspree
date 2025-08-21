@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DataSphere - Contact Us</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assests/css/main.css">
+    <link rel="stylesheet" href="assests/css/header.css">
+    <link rel="stylesheet" href="assests/css/contact.css">
+    <link rel="stylesheet" href="assests/css/responsive.css">
+    <link rel="stylesheet" href="assests/css/home.css">
+    <script type="text/javascript">
+        var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+        (function() {
+            var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+            s1.async = true;
+            s1.src = 'https://embed.tawk.to/YOUR_TAWK_TO_WIDGET_ID/default';
+            s1.charset = 'UTF-8';
+            s1.setAttribute('crossorigin', '*');
+            s0.parentNode.insertBefore(s1, s0);
+        })();
+    </script>
+</head>
+<body>
+    <!-- Neural Network Background -->
+    <div class="neural-background"></div>
+    <div class="neural-connections" id="neuralNetwork"></div>
+
+    <!-- Professional Header with Navigation -->
+    <header class="professional-header">
+        <div class="header-left">
+            <a href="home.html" class="logo">
+                <div class="logo-icon"><i class="fas fa-database"></i></div>
+                <div class="logo-text">DataSphere</div>
+            </a>
+            <nav class="nav-links">
+                <a href="home.html" class="nav-link"><i class="fas fa-home"></i> Home</a>
+                <a href="index.html" class="nav-link"><i class="fas fa-chart-bar"></i> Dashboard</a>
+            </nav>
+        </div>
+        <div class="header-right">
+            <button class="btn btn-outline"><i class="fas fa-bell"></i></button>
+            <div class="user-profile">
+                <div class="user-avatar">RK</div>
+                <span>Ranjan Kumar</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="contact-container">
+            <h1 class="section-title">Get in Touch</h1>
+            <p class="section-subtitle">Have questions about our data catalog solutions? We're here to help.</p>
+            
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <h3>Our Location</h3>
+                        <p>Lane no.2, H. no. 42<br>Bhagwatipuram, Haridwar, 249404</p>
+                    </div>
+                    
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <h3>Phone Number</h3>
+                        <p>+91 8809515169</p>
+                        <p>Mon-Fri: 9am-5pm PST</p>
+                    </div>
+                    
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <h3>Email Address</h3>
+                        <p>kumarranjan62004@gmail.com</p>
+                        <p>ranjankrtm@gmail.com</p>
+                    </div>
+                    
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fas fa-comments"></i>
+                        </div>
+                        <h3>Live Chat</h3>
+                        <p>Available 24/7 for premium customers</p>
+                        <button class="btn btn-outline">Start Chat</button>
+                    </div>
+                </div>
+                
+                <div class="contact-form-container">
+                    <h2>Send us a Message</h2>
+                    <!-- Replace YOUR_FORMSPREE_ID with your actual Formspree form ID -->
+                    <form class="contact-form" id="contactForm" action="https://formspree.io/f/xzzvllvb" method="POST">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="company">Company Name</label>
+                            <input type="text" id="company" name="company">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <select id="subject" name="subject" required>
+                                <option value="">Select a subject</option>
+                                <option value="sales">Sales Inquiry</option>
+                                <option value="support">Technical Support</option>
+                                <option value="partnership">Partnership</option>
+                                <option value="demo">Request a Demo</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                        
+                        <!-- Confirmation message (initially hidden) -->
+                        <div id="formConfirmation" class="confirmation-message">
+                            <i class="fas fa-check-circle"></i>
+                            <p>Thank you for your message! We'll get back to you soon.</p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="map-section">
+        <div class="map-container">
+            <h2>Find Us Here</h2>
+            <div class="map-placeholder">
+                <i class="fas fa-map-marked-alt"></i>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3287.0839712294537!2d78.12056497533976!3d29.9163612249884!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390946176e3959d1%3A0x6d2acf3a208463d7!2sBhagwatipuram%20Colony%2C%20Gurukul%20Kangri%20Vishwavidyalaya%2C%20Jagjeetpur%2C%20Haridwar%2C%20Uttarakhand%20249404!5e1!3m2!1sen!2sin!4v1755773673365!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="faq-container">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            
+            <div class="faq-list">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>How quickly do you respond to inquiries?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We typically respond to all inquiries within 24 hours during business days. For premium support customers, we guarantee a response within 2 hours.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Do you offer custom data solutions?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, we specialize in custom data catalog and management solutions tailored to your specific business needs. Contact our sales team to discuss your requirements.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>What industries do you serve?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We serve a wide range of industries including finance, healthcare, retail, technology, and manufacturing. Our solutions are adaptable to any data-intensive industry.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>How do I schedule a demo?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>You can request a demo by filling out the contact form, selecting "Request a Demo" as the subject, or by calling our sales team directly at +1 (555) 123-4567.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="footer-content">
+        <div class="footer-column">
+            <h3>DataSphere</h3>
+            <p>Transforming data into intelligence with cutting-edge AI and machine learning solutions.</p>
+        </div>
+        <div class="footer-column">
+            <h3>Quick Links</h3>
+            <ul class="footer-links">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="index.html">Dashboard</a></li>
+            </ul>
+        </div>
+        <div class="footer-column">
+            <h3>Connect With Us</h3>
+            <ul class="footer-links">
+                <li><a href="https://x.com/RANJANKUMAR9423"><i class="fab fa-twitter"></i> Twitter</a></li>
+                <li><a href="https://www.linkedin.com/in/ranjan-kumar-229773263/"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
+                <li><a href="https://github.com/ranjan010604"><i class="fab fa-github"></i> GitHub</a></li>
+                <li><a href="https://personportfolioal.netlify.app/"><i class="fab fa-medium"></i> Blog</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2025 DataSphere. All rights reserved.</p>
+    </div>
+</footer>
+
+
+    <script src="assests/css/js/neuralNetwork.js"></script>
+    <script src="assests/css/js/contact.js"></script>
+</body>
+</html>
