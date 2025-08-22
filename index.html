@@ -3,181 +3,166 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Data Catalog Dashboard</title>
+    <title>DataSphere - Home</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/papaparse@5.3.0/papaparse.min.js"></script>
-    <link rel="stylesheet" href="styles/index.css">
+    <link rel="stylesheet" href="assests/css/main.css">
     <link rel="stylesheet" href="assests/css/header.css">
     <link rel="stylesheet" href="assests/css/home.css">
-    <link rel="stylesheet" href="assests/css/main.css">
     <link rel="stylesheet" href="assests/css/responsive.css">
+    <script type="text/javascript">
+        window.$crisp = [];
+        window.CRISP_WEBSITE_ID = "9f5ca2fd-5f0e-4395-bee9-7be16bfe52ef";
+        (function () {
+          var d = document;
+          var s = d.createElement("script");
+          s.src = "https://client.crisp.chat/l.js";
+          s.async = 1;
+          d.getElementsByTagName("head")[0].appendChild(s);
+        })();
+      </script>
 </head>
 <body>
+    <!-- Neural Network Background -->
+    <div class="neural-background"></div>
+    <div class="neural-connections" id="neuralNetwork"></div>
+
     <!-- Professional Header with Navigation -->
     <header class="professional-header">
         <div class="header-left">
-            <a href="Home.html" class="logo">
+            <a href="index.html" class="logo">
                 <div class="logo-icon"><i class="fas fa-database"></i></div>
                 <div class="logo-text">DataSphere</div>
             </a>
             <nav class="nav-links">
-                <a href="Home.html" class="nav-link active"><i class="fas fa-home"></i> Home</a>
-                <a href="contact.html" class="nav-link"><i class="fas fa-envelope"></i> Contact</a>
+                <a href="index.html" class="nav-link active">
+                    <i class="fas fa-home icon-only"></i>
+                    <span class="link-text"><i class="fas fa-home"></i> Home</span>
+                </a>
+                <a href="contact.html" class="nav-link">
+                    <i class="fas fa-envelope icon-only"></i>
+                    <span class="link-text"><i class="fas fa-envelope"></i> Contact</span>
+                </a>
+                <a href="dashbaord.html" class="nav-link">
+                    <i class="fas fa-chart-bar icon-only"></i>
+                    <span class="link-text"><i class="fas fa-chart-bar"></i> Dashboard</span>
+                </a>
             </nav>
         </div>
         <div class="header-right">
             <button class="btn btn-outline"><i class="fas fa-bell"></i></button>
             <div class="user-profile">
                 <div class="user-avatar">RK</div>
-                <span>Ranjan Kumar</span>
+                <span class="user-name">Ranjan Kumar</span>
             </div>
         </div>
     </header>
 
-    <div class="dashboard-container">
-        <header>
-            <div class="logo">
-                <div class="logo-icon"><i class="fas fa-database"></i></div>
-                <h1>Data Catalog Dashboard</h1>
-            </div>
-            <div class="performance-metrics">
-                <div class="metric">
-                    <div class="metric-value" id="load-time">0.8s</div>
-                    <div class="metric-label">Load Time</div>
-                </div>
-                <div class="metric">
-                    <div class="metric-value" id="total-datasets">14</div>
-                    <div class="metric-label">Total Datasets</div>
-                </div>
-                <div class="metric">
-                    <div class="metric-value" id="cache-status">Enabled</div>
-                    <div class="metric-label">Caching</div>
-                </div>
-            </div>
-        </header>
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <h1 class="hero-title">Transform Data into Intelligence</h1>
+        <p class="hero-subtitle">DataSphere provides cutting-edge data catalog and management solutions powered by AI and machine learning to help organizations unlock the full potential of their data assets.</p>
+        <div class="cta-buttons">
+            <button class="btn btn-primary"><i class="fas fa-rocket"></i> Get Started</button>
+            <button class="btn btn-outline"><i class="fas fa-play-circle"></i> Watch Demo</button>
+        </div>
+    </section>
 
-        <div class="controls">
-            <div class="search-box">
-                <i class="fas fa-search"></i>
-                <input type="text" id="search-input" placeholder="Search datasets...">
+    <!-- Features Section -->
+    <section class="features-section">
+        <h2 class="section-title">Why Choose DataSphere?</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-brain"></i>
+                </div>
+                <h3 class="feature-title">AI-Powered Insights</h3>
+                <p class="feature-description">Leverage advanced machine learning algorithms to uncover hidden patterns and insights in your data.</p>
             </div>
-            <div class="filters">
-                <select class="filter-select" id="category-filter">
-                    <option value="">All Categories</option>
-                    <option value="Sales">Sales</option>
-                    <option value="Marketing">Marketing</option>
-                    <option value="Finance">Finance</option>
-                    <option value="Operations">Operations</option>
-                    <option value="HR">HR</option>
-                </select>
-                <select class="filter-select" id="date-filter">
-                    <option value="">Any Date</option>
-                    <option value="week">Last Week</option>
-                    <option value="month">Last Month</option>
-                    <option value="quarter">Last Quarter</option>
-                </select>
-                <select class="filter-select" id="size-filter">
-                    <option value="">Any Size</option>
-                    <option value="small">Small (&lt; 1MB)</option>
-                    <option value="medium">Medium (1-10MB)</option>
-                    <option value="large">Large (&gt; 10MB)</option>
-                </select>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-bolt"></i>
+                </div>
+                <h3 class="feature-title">Lightning Fast Processing</h3>
+                <p class="feature-description">Process and analyze large datasets in record time with our optimized data engine.</p>
             </div>
-            <div class="export-options">
-                <button class="btn btn-outline" id="export-csv"><i class="fas fa-file-csv"></i> CSV</button>
-                <button class="btn btn-outline" id="export-json"><i class="fas fa-file-code"></i> JSON</button>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+                <h3 class="feature-title">Enterprise-Grade Security</h3>
+                <p class="feature-description">Protect your sensitive data with industry-leading security protocols and compliance standards.</p>
             </div>
         </div>
+    </section>
 
-        <div class="data-content">
-            <div class="sidebar">
-                <h2>Data Categories</h2>
-                <ul class="category-list">
-                    <li class="category-item active" data-category="">
-                        <span>All Datasets</span>
-                        <span class="category-count">14</span>
-                    </li>
-                    <li class="category-item" data-category="Sales">
-                        <span>Sales</span>
-                        <span class="category-count">5</span>
-                    </li>
-                    <li class="category-item" data-category="Marketing">
-                        <span>Marketing</span>
-                        <span class="category-count">4</span>
-                    </li>
-                    <li class="category-item" data-category="Finance">
-                        <span>Finance</span>
-                        <span class="category-count">3</span>
-                    </li>
-                    <li class="category-item" data-category="Operations">
-                        <span>Operations</span>
-                        <span class="category-count">2</span>
-                    </li>
+    <!-- Projects Showcase -->
+    <section class="projects-section">
+        <h2 class="section-title">Featured Projects</h2>
+        <div class="projects-grid">
+            <div class="project-card">
+                <div class="project-image">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">Predictive Analytics Suite</h3>
+                    <p class="project-description">A comprehensive analytics platform that uses machine learning to predict market trends and customer behavior.</p>
+                    <a href="projects/predictive-analytics.html" class="project-link">View Project <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-image">
+                    <i class="fas fa-robot"></i>
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">AI Data Classifier</h3>
+                    <p class="project-description">An intelligent system that automatically categorizes and tags data for improved organization and retrieval.</p>
+                    <a href="projects/ai-classifier.html" class="project-link">View Project <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-image">
+                    <i class="fas fa-network-wired"></i>
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">Neural Data Processor</h3>
+                    <p class="project-description">A neural network-based data processing system that mimics human brain functions for advanced data analysis.</p>
+                    <a href="projects/neural-processor.html" class="project-link">View Project <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>DataSphere</h3>
+                <p>Transforming data into intelligence with cutting-edge AI and machine learning solutions.</p>
+            </div>
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="dashbaord.html">Dashboard</a></li>
                 </ul>
             </div>
-
-            <div class="main-content">
-                <table class="data-table">
-                    <thead>
-                        <tr>
-                            <th>Name</th>
-                            <th>Category</th>
-                            <th>Last Updated</th>
-                            <th>Size</th>
-                            <th>Records</th>
-                            <th>Quality</th>
-                        </tr>
-                    </thead>
-                    <tbody id="data-table-body">
-                        <!-- Data will be populated by JavaScript -->
-                    </tbody>
-                </table>
-
-                <div class="pagination">
-                    <div class="page-info">Showing <span id="showing-start">1</span>-<span id="showing-end">5</span> of <span id="total-count">14</span> datasets</div>
-                    <div class="page-controls">
-                        <button class="page-btn active">1</button>
-                        <button class="page-btn">2</button>
-                        <button class="page-btn">3</button>
-                        <button class="page-btn"><i class="fas fa-chevron-right"></i></button>
-                    </div>
-                </div>
+            <div class="footer-column">
+                <h3>Connect With Us</h3>
+                <ul class="footer-links">
+                    <li><a href="https://x.com/RANJANKUMAR9423"><i class="fab fa-twitter"></i> Twitter</a></li>
+                    <li><a href="https://www.linkedin.com/in/ranjan-kumar-229773263/"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
+                    <li><a href="https://github.com/ranjan010604"><i class="fab fa-github"></i> GitHub</a></li>
+                    <li><a href="https://personportfolioal.netlify.app/"><i class="fab fa-medium"></i> Blog</a></li>
+                </ul>
             </div>
         </div>
-    </div>
-<!-- Footer -->
-<footer class="footer">
-    <div class="footer-content">
-        <div class="footer-column">
-            <h3>DataSphere</h3>
-            <p>Transforming data into intelligence with cutting-edge AI and machine learning solutions.</p>
+        <div class="footer-bottom">
+            <p>&copy; 2025 DataSphere. All rights reserved.</p>
         </div>
-        <div class="footer-column">
-            <h3>Quick Links</h3>
-            <ul class="footer-links">
-                <li><a href="home.html">Home</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="index.html">Dashboard</a></li>
-            </ul>
-        </div>
-        <div class="footer-column">
-            <h3>Connect With Us</h3>
-            <ul class="footer-links">
-                <li><a href="https://x.com/RANJANKUMAR9423"><i class="fab fa-twitter"></i> Twitter</a></li>
-                <li><a href="https://www.linkedin.com/in/ranjan-kumar-229773263/"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
-                <li><a href="https://github.com/ranjan010604"><i class="fab fa-github"></i> GitHub</a></li>
-                <li><a href="https://personportfolioal.netlify.app/"><i class="fab fa-medium"></i> Blog</a></li>
-            </ul>
-        </div>
-    </div>
-    <div class="footer-bottom">
-        <p>&copy; 2025 DataSphere. All rights reserved.</p>
-    </div>
-</footer>
+    </footer>
 
-        <script src="scripts/dataset.js"></script>
-        <script src="scripts/index.js"></script>
-        <script src="assests/css/js/navigation.js"></script>
-        <script src="assests/css/js/neuralNetwork.js"></script>
+    <script src="assests/css/js/neuralNetwork.js"></script>
+    <script src="assests/css/js/navigation.js"></script>
 </body>
 </html>

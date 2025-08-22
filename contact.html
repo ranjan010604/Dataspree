@@ -10,17 +10,20 @@
     <link rel="stylesheet" href="assests/css/contact.css">
     <link rel="stylesheet" href="assests/css/responsive.css">
     <link rel="stylesheet" href="assests/css/home.css">
-    <script type="text/javascript">
-        var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
-        (function() {
-            var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
-            s1.async = true;
-            s1.src = 'https://embed.tawk.to/YOUR_TAWK_TO_WIDGET_ID/default';
-            s1.charset = 'UTF-8';
-            s1.setAttribute('crossorigin', '*');
-            s0.parentNode.insertBefore(s1, s0);
-        })();
-    </script>
+    <!-- Crisp Chat -->
+    <!-- Crisp Chat -->
+  <script type="text/javascript">
+    window.$crisp = [];
+    window.CRISP_WEBSITE_ID = "9f5ca2fd-5f0e-4395-bee9-7be16bfe52ef";
+    (function () {
+      var d = document;
+      var s = d.createElement("script");
+      s.src = "https://client.crisp.chat/l.js";
+      s.async = 1;
+      d.getElementsByTagName("head")[0].appendChild(s);
+    })();
+  </script>
+        
 </head>
 <body>
     <!-- Neural Network Background -->
@@ -30,20 +33,30 @@
     <!-- Professional Header with Navigation -->
     <header class="professional-header">
         <div class="header-left">
-            <a href="home.html" class="logo">
+            <a href="index.html" class="logo">
                 <div class="logo-icon"><i class="fas fa-database"></i></div>
                 <div class="logo-text">DataSphere</div>
             </a>
             <nav class="nav-links">
-                <a href="home.html" class="nav-link"><i class="fas fa-home"></i> Home</a>
-                <a href="index.html" class="nav-link"><i class="fas fa-chart-bar"></i> Dashboard</a>
+                <a href="index.html" class="nav-link active">
+                    <i class="fas fa-home icon-only"></i>
+                    <span class="link-text"><i class="fas fa-home"></i> Home</span>
+                </a>
+                <a href="contact.html" class="nav-link">
+                    <i class="fas fa-envelope icon-only"></i>
+                    <span class="link-text"><i class="fas fa-envelope"></i> Contact</span>
+                </a>
+                <a href="dashbaord.html" class="nav-link">
+                    <i class="fas fa-chart-bar icon-only"></i>
+                    <span class="link-text"><i class="fas fa-chart-bar"></i> Dashboard</span>
+                </a>
             </nav>
         </div>
         <div class="header-right">
             <button class="btn btn-outline"><i class="fas fa-bell"></i></button>
             <div class="user-profile">
                 <div class="user-avatar">RK</div>
-                <span>Ranjan Kumar</span>
+                <span class="user-name">Ranjan Kumar</span>
             </div>
         </div>
     </header>
@@ -88,7 +101,8 @@
                         </div>
                         <h3>Live Chat</h3>
                         <p>Available 24/7 for premium customers</p>
-                        <button class="btn btn-outline">Start Chat</button>
+                        <button class="btn btn-outline" onclick="$crisp.push(['do', 'chat:open'])">Start Chat</button>
+
                     </div>
                 </div>
                 
@@ -211,9 +225,9 @@
         <div class="footer-column">
             <h3>Quick Links</h3>
             <ul class="footer-links">
-                <li><a href="home.html">Home</a></li>
+                <li><a href="index.html">Home</a></li>
                 <li><a href="contact.html">Contact</a></li>
-                <li><a href="index.html">Dashboard</a></li>
+                <li><a href="dashbaord.html">Dashboard</a></li>
             </ul>
         </div>
         <div class="footer-column">

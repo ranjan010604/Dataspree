@@ -13,15 +13,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
     
-    // Function to open Tawk.to chat
-    function openTawkToChat() {
-        if (typeof Tawk_API !== 'undefined') {
-            Tawk_API.maximize();
-        } else {
-            alert('Chat service is currently unavailable. Please try again later or contact us via email.');
-        }
-    }
-    
     // Add event listeners for chat buttons
     if (startChatBtn) {
         startChatBtn.addEventListener('click', openTawkToChat);
@@ -40,7 +31,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     if (contactForm) {
-        // Replace with your actual Formspree form ID
+       
         const formspreeUrl = 'https://formspree.io/f/xzzvllvb';
         contactForm.action = formspreeUrl;
         
@@ -84,14 +75,14 @@ document.addEventListener('DOMContentLoaded', function() {
                 });
                 
                 if (response.ok) {
-                    // Show success message
+                   
                     confirmationMessage.style.display = 'block';
                     contactForm.reset();
                     
-                    // Scroll to confirmation message
+                   
                     confirmationMessage.scrollIntoView({ behavior: 'smooth' });
                     
-                    // Hide confirmation after 5 seconds
+                    
                     setTimeout(() => {
                         confirmationMessage.style.display = 'none';
                     }, 5000);
