@@ -1,11 +1,13 @@
 # DataSphere Documentation
 
-## Table of Contents
+## 📑 Table of Contents
 1. [Project Overview](#project-overview)
 2. [Installation Guide](#installation-guide)
+   - [Local Development](#local-development)
+   - [Production Deployment](#production-deployment)
 3. [Configuration](#configuration)
    - [Formspree Integration](#formspree-integration)
-   - [Tawk.to Integration](#tawktop-integration)
+   - [Live Chat Integration (Tawk.to / Crisp)](#live-chat-integration-tawkto--crisp)
 4. [Customization](#customization)
    - [Styling](#styling)
    - [Content](#content)
@@ -14,164 +16,173 @@
 7. [Troubleshooting](#troubleshooting)
 8. [FAQ](#faq)
 
-## Project Overview
+---
 
-DataSphere is a comprehensive data catalog and management platform designed to help organizations manage their data assets efficiently. The platform features a modern, responsive interface with AI-powered capabilities for data discovery, classification, and governance.
+## 📌 Project Overview
 
-## Installation Guide
+**DataSphere** is a comprehensive **data catalog and management platform** designed to help organizations manage their data assets efficiently.  
 
-### Local Development
-1. Download or clone the project files
-2. Open `home.html` in a web browser
-3. For full functionality, use a local server:
-   ```bash
-   # Using Python
-   python -m http.server 8000
-   
-   # Using Node.js
-   npx serve
-   
-   # Using PHP
-   php -S localhost:8000
-Production Deployment
-Upload all files to your web server
+It includes:  
+- A modern, **responsive interface**  
+- **AI-powered** data discovery, classification, and governance  
+- **Live chat integration** for customer support  
+- **Contact forms** powered by Formspree  
+
+---
+
+## ⚡ Installation Guide
+
+### 🔹 Local Development
+1. Download or clone the project files.  
+2. Open `home.html` in a web browser.  
+3. For full functionality, use a local server:  
+
+```bash
+# Using Python
+python -m http.server 8000
+
+# Using Node.js
+npx serve
+
+# Using PHP
+php -S localhost:8000
+🔹 Production Deployment
+Upload all files to your web server.
 
 Ensure proper file permissions:
 
+bash
+Copy
+Edit
 chmod 755 -R datasphere/
-Configure Formspree and Tawk.to integrations (see below)
+Configure Formspree and Tawk.to/Crisp integrations (see Configuration).
 
-Test all functionality on the live server
+Test all functionality on the live server.
 
-Configuration
-Formspree Integration
+⚙️ Configuration
+🔹 Formspree Integration
 Formspree handles form submissions and email notifications.
 
 Setup Steps:
-Create a Formspree account at https://formspree.io/
 
-Create a new form in your dashboard
+Create a free account at Formspree.io.
 
-Note the form ID (e.g., xqkrgjnp)
+Create a new form and copy the Form ID (e.g., xqkrgjnp).
 
-Replace all instances of YOUR_FORMSPREE_ID with your actual form ID:
+Replace all instances of YOUR_FORMSPREE_ID with your actual form ID.
 
-In contact.html:
+Example in contact.html:
 
+html
+Copy
+Edit
 <form action="https://formspree.io/f/xqkrgjnp" method="POST">
-In assets/js/contact.js:
+Example in assets/js/contact.js:
 
 javascript
+Copy
+Edit
 const formspreeUrl = 'https://formspree.io/f/xqkrgjnp';
-Formspree Configuration:
-Set up email notifications in Formspree dashboard
+Formspree Settings:
 
-Configure auto-responders for form submissions
+Enable email notifications
 
-Add spam protection filters as needed
+Configure auto-responders
 
-Tawk.to Integration
-Tawk.to provides free live chat functionality.
+Add spam protection filters
 
-Setup Steps:
-Create a Tawk.to account at https://www.tawk.to/
+🔹 Live Chat Integration (Tawk.to / Crisp)
+DataSphere supports free live chat integration via Tawk.to or Crisp.
 
-Create a new widget in your dashboard
+Setup Steps (Tawk.to):
 
-Note the widget ID from the installation code
+Create a free account at Tawk.to.
 
-Replace YOUR_TAWK_TO_WIDGET_ID in contact.html with your actual ID:
+Create a new widget and copy the widget installation code.
 
+Replace YOUR_WIDGET_ID in contact.html with your actual ID:
 
+javascript
+Copy
+Edit
+s1.src = 'https://embed.tawk.to/YOUR_WIDGET_ID/default';
+Setup Steps (Crisp):
 
-s1.src = 'https://embed.tawk.to/your_widget_id_here/default';
-Tawk.to Configuration:
-Customize the chat widget appearance
+Create a free account at Crisp.
 
-Set up operating hours and offline messages
+Copy your Crisp website ID.
 
-Configure email notifications for new messages
+Paste script before </body> in contact.html:
 
-Add canned responses for common questions
+html
+Copy
+Edit
+<script type="text/javascript">
+  window.$crisp=[];
+  window.CRISP_WEBSITE_ID="YOUR_CRISP_ID";
+  (function(){
+    var d=document,s=d.createElement("script");
+    s.src="https://client.crisp.chat/l.js";s.async=1;
+    d.getElementsByTagName("head")[0].appendChild(s);
+  })();
+</script>
+Chat Configuration Options:
 
-Customization
-Styling
-The platform uses CSS variables for easy customization. Edit assets/css/main.css:
+Customize widget appearance (colors, position, branding)
 
+Set operating hours & offline messages
+
+Configure canned responses
+
+Enable email notifications for missed messages
+
+🎨 Customization
+🔹 Styling
+Edit assets/css/main.css to change colors, spacing, and typography.
+
+Example:
+
+css
+Copy
+Edit
 :root {
-  /* Color scheme */
-  --primary: #42a5f5;       /* Primary blue */
-  --primary-dark: #1e88e5;  /* Dark blue */
-  --secondary: #152642;     /* Dark background */
-  --accent: #2ecc71;        /* Green accent */
-  --text: #e0e0e0;          /* Light text */
-  --text-secondary: #b0bec5;/* Secondary text */
-  
-  /* Spacing */
-  --spacing-xs: 0.5rem;
-  --spacing-sm: 1rem;
-  --spacing-md: 1.5rem;
-  --spacing-lg: 2rem;
-  --spacing-xl: 3rem;
-  
-  /* Border radius */
-  --radius-sm: 4px;
-  --radius-md: 8px;
-  --radius-lg: 12px;
+  --primary: #42a5f5;
+  --primary-dark: #1e88e5;
+  --secondary: #152642;
+  --accent: #2ecc71;
+  --text: #e0e0e0;
 }
-Content
-Updating Company Information
-Edit the following sections in HTML files:
+🔹 Content
+Update company info in header and footer.
 
-Company name and logo in header
+Modify contact details in contact.html.
 
-Contact information in footer
+Add new feature cards in home.html.
 
-Address, phone, and email in contact page
+Create new pages (e.g., services.html) and update navigation menus.
 
-Modifying Features
-Update feature cards in home.html:
-
-
-<div class="feature-card">
-  <div class="feature-icon">
-    <i class="fas fa-brain"></i>
-  </div>
-  <h3 class="feature-title">Your Feature Title</h3>
-  <p class="feature-description">Your feature description.</p>
-</div>
-Adding New Pages
-Create new HTML file (e.g., services.html)
-
-Copy the header and footer structure from existing pages
-
-Add your content
-
-Update navigation in all pages to include the new link
-
-
-File Structure
-
+📂 File Structure
+bash
+Copy
+Edit
 datasphere/
 ├── assets/
 │   ├── css/
-│   │   ├── main.css              # Global styles and variables
-│   │   ├── header.css            # Header and navigation styles
-│   │   ├── home.css              # Home page specific styles
-│   │   ├── contact.css           # Contact page specific styles
-│   │   └── responsive.css        # Responsive design styles
+│   │   ├── main.css          # Global styles & variables
+│   │   ├── header.css        # Header styles
+│   │   ├── home.css          # Home page styles
+│   │   ├── contact.css       # Contact page styles
+│   │   └── responsive.css    # Responsive design
 │   └── js/
-│       ├── neuralNetwork.js      # Animated background functionality
-│       ├── navigation.js         # Navigation interactions
-│       └── contact.js            # Contact form validation and chat
-├── home.html                     # Main landing page
-├── contact.html                  # Contact page with form and chat
-├── dashboard.html                # Data catalog dashboard (to be implemented)
-├── README.md                     # Project overview
-└── documentation.md              # Detailed documentation (this file)
-
-
-Browser Support
+│       ├── neuralNetwork.js  # Background animations
+│       ├── navigation.js     # Navigation interactions
+│       └── contact.js        # Contact form + chat
+├── home.html                 # Landing page
+├── contact.html              # Contact page (Form + Chat)
+├── dashboard.html            # Data catalog dashboard (coming soon)
+├── README.md                 # Project overview
+└── documentation.md          # Detailed documentation (this file)
+🌍 Browser Support
 Browser	Version	Support
 Chrome	60+	✅ Fully supported
 Firefox	60+	✅ Fully supported
@@ -179,101 +190,47 @@ Safari	12+	✅ Fully supported
 Edge	79+	✅ Fully supported
 iOS Safari	12+	✅ Fully supported
 Chrome Android	90+	✅ Fully supported
-Troubleshooting
+
+🛠️ Troubleshooting
 Common Issues
-Forms Not Submitting
-Check that Formspree ID is correctly configured
+Forms not submitting → Check Formspree ID, internet connection, and console logs.
 
-Verify internet connection
+Live chat not appearing → Verify widget ID, disable ad blockers, confirm Tawk.to/Crisp account active.
 
-Check browser console for errors
+Styling issues → Clear cache, check CSS paths, re-upload assets.
 
-Live Chat Not Appearing
-Confirm Tawk.to widget ID is correct
+Background animation not working → Ensure neuralNetwork.js is loaded, verify Canvas support.
 
-Check if ad blockers are interfering
+Debugging Tips
+Open browser Developer Tools (F12).
 
-Verify Tawk.to account is active
+Check Console for JS errors.
 
-Styling Issues
-Clear browser cache (Ctrl+F5 or Cmd+Shift+R)
+Inspect Network tab for API calls.
 
-Check CSS file paths are correct
+Use Elements tab to verify CSS & HTML rendering.
 
-Verify all assets are uploaded to server
+❓ FAQ
+Q: How do I change the color scheme?
+A: Edit CSS variables in assets/css/main.css.
 
-Neural Network Background Not Working
-Check that neuralNetwork.js is loaded
+Q: Can I add more pages?
+A: Yes, create new .html files and update navigation links.
 
-Verify browser supports Canvas API
+Q: Is the platform mobile-friendly?
+A: Yes, fully responsive.
 
+Q: How do I set up email notifications?
+A: Configure notifications in Formspree and Tawk.to/Crisp dashboards.
 
+Q: How do I customize the chat widget?
+A: Use the dashboard (Tawk.to/Crisp) to update colors, position, behavior.
 
-Debugging
-Open browser developer tools (F12) to:
+Q: How do I translate the platform?
+A: Update text in HTML files & lang attribute in <html> tag.
 
-Check for JavaScript errors in Console tab
+Q: How do I track form submissions?
+A: Formspree dashboard provides submission analytics.
 
-Verify network requests in Network tab
-
-Inspect elements in Elements tab
-
-FAQ
-How do I change the color scheme?
-Edit the CSS variables in assets/css/main.css under the :root selector.
-
-Can I add more pages?
-Yes, create new HTML files following the same structure as existing pages. Remember to update the navigation in all pages.
-
-How do I add new features to the home page?
-Add new feature cards to the features section in home.html following the existing pattern.
-
-Is this platform mobile-friendly?
-Yes, the platform is fully responsive and works on all device sizes.
-
-How do I set up email notifications?
-Configure email notifications in your Formspree and Tawk.to dashboards.
-
-Can I use my own domain for forms?
-Yes, Formspree supports custom domains on paid plans.
-
-How do I translate the platform to another language?
-Edit all text content in the HTML files and update the lang attribute in the <html> tag.
-
-Is there a way to track form submissions?
-Yes, Formspree provides analytics on form submissions in their dashboard.
-
-How can I customize the chat widget appearance?
-Use the Tawk.to dashboard to customize the chat widget's colors, position, and behavior.
-
-What if I need help with implementation?
-Contact our support team through the live chat on the contact page or email support@datasphere.com.
-
-For additional questions or support, please refer to the contact information on our website.
-
-text
-
-## File Structure Summary
-
-Your project should now have these files:
-datasphere/
-├── assets/
-│ ├── css/
-│ │ ├── main.css
-│ │ ├── header.css
-│ │ ├── home.css
-│ │ ├── contact.css
-│ │ └── responsive.css
-│ └── js/
-│ ├── neuralNetwork.js
-│ ├── navigation.js
-│ └── contact.js
-├── home.html
-├── contact.html
-├── dashboard.html (to be implemented)
-├── README.md
-└── documentation.md
-
-text
-
-These documentation files provide comprehensive information about your DataSphere project, including setup instructions, configuration details, customization options, and troubleshooting guidance.
+Q: What if I need help?
+A: Contact support via live chat on contact.html or email: support@datasphere.com.
